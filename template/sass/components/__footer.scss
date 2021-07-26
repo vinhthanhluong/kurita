@@ -1,0 +1,180 @@
+.footer {
+    background-color: $bg-w-cl;
+    margin-top: auto;
+
+    .footer-top {
+        .column {
+            &.ft-first {
+                width: calc(100% /12 * 3);
+            }
+
+            &.ft-if {
+                width: calc(100% /12 * 5 - 30px);
+            }
+
+            &.ft-last {
+                width: calc(100% /12 * 4 + 30px);
+            }
+        }
+
+
+        .ft-logo {
+            max-width: 190px;
+            margin-bottom: 25px;
+
+            img {
+                width: auto;
+                height: 100%;
+                max-width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .ft-desc {
+            color: rgba($color: $b-2222-cl, $alpha: .7);
+            @include lh(22, 14);
+            margin-bottom: 30px;
+        }
+
+        .ft-social {
+            display: flex;
+            align-items: center;
+
+            .social-item {
+                &:not(:first-child) {
+                    margin-left: 20px;
+                }
+            }
+
+            .social-link {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                border-radius: 100%;
+                background-color: rgba($color: $b-2222-cl, $alpha: .2);
+                color: $w-cl;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                transition: all .3s ease;
+
+                &:hover {
+                    background-color: $b-2222-cl;
+                }
+            }
+        }
+
+        .ft-if {
+            .ft-inner {
+                display: flex;
+                flex-wrap: wrap;
+                margin: -15px;
+
+                @include max-media($bk-d-992) {
+                    margin: -7.5px;
+                }
+            }
+
+            .ft-box {
+                width: 50%;
+                padding: 15px;
+
+                @include max-media($bk-d-992) {
+                    padding: 7.5px;
+                }
+            }
+
+            .ft-tt {
+                color: $b-2222-cl;
+                margin-bottom: 20px;
+            }
+
+            .ft-content {
+                color: rgba($color: $b-2222-cl, $alpha: .7);
+
+                .ft-b {
+                    @include lh(22, 14);
+
+                    a {
+                        transition: all .3s ease;
+
+                        &:hover {
+                            color: $main-cl;
+                        }
+                    }
+                }
+
+                .ft-hotline {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 15px;
+
+                    p {
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+
+        }
+
+        .ft-tab {
+            border: 1px solid rgba($color: $g-7070-cl, $alpha: .1);
+
+            .tab-link {
+                background-color: #EDF7FA;
+
+                .tab-title {
+                    font-size: 12px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    padding: 12px 14px;
+                    white-space: nowrap;
+                    width: calc(100% / 4);
+
+                    &.active {
+                        background-color: $main-cl;
+                        color: $w-cl;
+                    }
+                }
+            }
+
+            .tab-content {
+                padding: 25px 30px;
+
+                .tab-content-box {
+                    &.active {
+                        animation: showTab 1s;
+                    }
+                }
+            }
+
+            .tab-inner {
+                .tab-b {
+                    &:not(:first-child) {
+                        margin-top: 20px;
+                    }
+
+                    .tab-tx {
+                        display: flex;
+                        align-items: center;
+
+                        a {
+                            margin-left: 5px;
+                            display: inline-block;
+                            transition: all .3s ease;
+
+                            &:hover {
+                                color: $main-cl;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}
