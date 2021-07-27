@@ -1,0 +1,426 @@
+.box-intro {
+    overflow: hidden;
+
+    &.intro-new{
+        .columns{
+            align-items: center;
+        }
+    }
+
+    .column {
+        width: calc(100% / 12 * 6);
+    }
+
+    .intro-wrapper{
+        position: relative;
+        .box-arc{
+            bottom: 10px;
+            right: 0;
+            transform: translateX(50%);
+
+        }
+
+    }
+
+    .intro-img {
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .intro-title {
+        margin-bottom: 25px;
+        @include lh(56, 40);
+        color: $b-2222-cl;
+    }
+
+    .intro-label {
+        margin-bottom: 22px;
+    }
+
+    .intro-desc {
+        @include lh(22, 14);
+        margin-bottom: 40px;
+        color: $b-2222-cl;
+
+        P{
+            margin: 30px 0;
+            &:last-child{
+                margin-bottom: 0;
+            }
+
+            &:first-child{
+                margin-top: 0;
+            }
+        }
+    }
+
+    &.home-intro {
+        .intro-wrapper {
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 130px;
+                height: 130px;
+                border-radius: 100%;
+                background-color: #EAFAFC;
+                position: absolute;
+                bottom: -10px;
+                left: -105px;
+            }
+
+            &::after {
+                content: '';
+                width: 348px;
+                height: 348px;
+                border-radius: 100%;
+                background-image: linear-gradient(225deg, transparent, $main-cl);
+                opacity: .1;
+                position: absolute;
+                top: -170px;
+                right: 0;
+                transform: translateX(50%);
+            }
+        }
+    }
+}
+
+.service {
+    overflow: hidden;
+    .service-title {
+        margin-bottom: 35px;
+    }
+
+    .service-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .service-reverse {
+        .service-box {
+            flex-direction: row-reverse;
+        }
+
+        .service-item {
+
+            &.item-one,
+            &.item-two,
+            &.item-three,
+            &.item-four {
+                &::after {
+                    right: auto;
+                    left: 0;
+                    transform: translate(-100%, -50%) scaleX(-1);
+
+                }
+            }
+        }
+    }
+
+    .service-box {
+        width: 50%;
+        display: flex;
+    }
+
+    .service-item {
+        width: 50%;
+        position: relative;
+
+        &.item-one,
+        &.item-two,
+        &.item-three,
+        &.item-four {
+            &::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 15px 0 15px 15px;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translate(100%, -50%);
+                z-index: 1;
+
+            }
+        }
+
+
+        &.item-one {
+            background-color: $main-cl;
+
+            &::after {
+                border-color: transparent transparent transparent $main-cl;
+            }
+        }
+
+        &.item-two {
+            background-color: #075291;
+
+            &::after {
+                border-color: transparent transparent transparent #075291;
+            }
+        }
+
+        &.item-three {
+            background-color: #2AB73F;
+
+            &::after {
+                border-color: transparent transparent transparent #2AB73F;
+            }
+        }
+
+        &.item-four {
+            background-color: #1579E0;
+
+            &::after {
+                border-color: transparent transparent transparent #1579E0;
+            }
+        }
+
+    }
+
+    .service-inner {
+        padding: 35px;
+        padding-right: 20px;
+
+        .service-icon {
+            margin-bottom: 15px;
+        }
+
+        .service-tt {
+            color: $w-cl;
+            transition: all .3s ease;
+
+            &:hover {
+                color: $b-cl;
+            }
+        }
+    }
+
+
+    .service-img {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-width: 100%;
+        }
+    }
+}
+
+.fields {
+    overflow: hidden;
+    background-color: rgba($color: $main-cl, $alpha: .07);
+
+    .swiper-container {
+        overflow: visible;
+        padding-bottom: 65px;
+
+        .swiper-pagination-bullet {
+            background-color: #D8E3E7;
+            width: 8px;
+            height: 8px;
+            transition: all .3s ease;
+            opacity: 1;
+
+            &-active {
+                background-color: $main-cl;
+                width: 30px;
+                border-radius: 5px;
+            }
+
+        }
+    }
+
+    .fields-inner {
+        &:hover {
+            .fields-img {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    .fields-title {
+        margin-bottom: 35px;
+    }
+
+    .fields-img {
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-width: 100%;
+            transition: all .3s ease;
+        }
+    }
+
+    .fields-content {
+        background-color: white;
+        padding: 20px 35px 50px;
+        position: relative;
+    }
+
+    .fields-tt {
+        transition: all .3s ease;
+        margin-bottom: 15px;
+
+        &:hover {
+            color: $b-cl;
+        }
+    }
+
+    .fields-list {
+        .fields-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            &:not(:first-child) {
+                margin-top: 10px;
+            }
+
+
+            &::before {
+                content: '\f111 ';
+                font-family: 'Fontawesome';
+                color: $main-cl;
+                font-size: 8px;
+                margin-right: 15px;
+
+            }
+        }
+    }
+
+    .fields-more {
+        width: 44px;
+        height: 44px;
+        border-radius: 100%;
+        background-color: $main-cl;
+        color: $w-cl;
+        position: absolute;
+        bottom: 0;
+        right: 35px;
+        font-size: 18px;
+        transform: translateY(50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        cursor: pointer;
+        transition: all .3s ease;
+
+        &:hover {
+            color: $main-cl;
+            background-color: $w-cl;
+            box-shadow: 0px 0px 20px rgba($color: $b-cl, $alpha: .16);
+        }
+    }
+}
+
+.library {
+    overflow: hidden;
+    position: relative;
+    &::after{
+        content: '';
+        width: 416px;
+        height: 416px;
+        border-radius: 100%;
+        background-color: rgba($color: #B9EEF4, $alpha: .3);
+        position: absolute;
+        bottom: -115px;
+        right: -135px;
+    }
+
+    .library-wrapper {
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 192px;
+            height: 192px;
+            border-radius: 100%;
+            background-image: linear-gradient(135deg, transparent, rgba(8, 146, 185, 0.1));
+            position: absolute;
+            top: -50px;
+            left: -120px;
+        }
+
+        &::after{
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: $main-cl;
+            border-radius: 100%;
+            position: absolute;
+            top: 170px;
+            left: -70px;
+        }
+
+
+       
+    }
+
+    .column {
+        width: calc(100% / 12 * 3);
+
+        &.wth-bi {
+            width: calc(100% / 12 * 6);
+        }
+    }
+
+
+    .library-title {
+        margin-bottom: 24px;
+        @include lh(56, 40);
+
+    }
+
+    .library-label {
+        margin-bottom: 22px;
+        @include lh(22, 14);
+    }
+
+    .library-desc {
+        @include lh(22, 14);
+        color: rgba($color: $b-2222-cl, $alpha: .7);
+    }
+
+    .library-img {
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+            img {
+                filter: none;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            filter: saturate(0%);
+            transition: all .3s ease;
+        }
+    }
+
+    .btn-link{
+        margin-top: 35px;
+    }
+}

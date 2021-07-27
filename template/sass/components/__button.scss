@@ -27,10 +27,37 @@
         color: initial;
     }
 
-    &:hover{
-        box-shadow: 10px 10px 20px rgba($color: $b-cl , $alpha: 0.16);
+    // &:hover{
+    //     box-shadow: 10px 10px 20px rgba($color: $b-cl , $alpha: 0.16);
+    // }
+
+    &.w-160{
+        max-width: 160px;
+
     }
 
+   
+
+    &.btn-blu{
+        background-color: #D8E3E7;
+        color: $b-2222-cl;
+        font-weight: normal;
+        text-transform: capitalize;
+        padding: 12px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &::after{
+            content: '\f105 ';
+            font-family: 'Fontawesome';
+            margin-left: 15px;
+            color: $main-cl;
+            font-size: 20px;
+            transition: all .3s ease;
+        }
+
+    }
    
 }
 

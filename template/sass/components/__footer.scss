@@ -3,6 +3,8 @@
     margin-top: auto;
 
     .footer-top {
+       
+        border-top: 1px solid rgba($color: $g-7070-cl, $alpha: .1);
         .column {
             &.ft-first {
                 width: calc(100% /12 * 3);
@@ -123,7 +125,7 @@
             border: 1px solid rgba($color: $g-7070-cl, $alpha: .1);
 
             .tab-link {
-                background-color: #EDF7FA;
+                background-color: $lu-EDF7-cl;
 
                 .tab-title {
                     font-size: 12px;
@@ -172,6 +174,79 @@
                     }
                 }
             }
+        }
+    }
+
+
+    .footer-bottom {
+        background-color: $lu-EDF7-cl;
+        
+        .columns {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ft-list {
+            display: flex;
+            align-items: center;
+            margin: -15px;
+            @include max-media($bk-d-992){
+                margin: -7.5px;
+            }
+
+            .ft-item {
+                padding: 15px;
+                @include max-media($bk-d-992){
+                    padding: 7.5px;
+                }
+                position: relative;
+                &::after{
+                    content: '|';
+                    color: $main-cl;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                }
+                &:last-child{
+                    &::after{
+                        display: none;
+                    }
+                }
+
+            }
+
+            .ft-link {
+                color: $main-cl;
+                transition: all .3s ease;
+                &:hover{
+                    color: $b-cl;
+                    text-decoration: underline;
+                }
+
+
+            }
+        }
+
+        .ft-right{
+            .ft-inner{
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .copy-right{
+            margin-right: 20px;
+            p{
+                color: rgba($color: $b-2222-cl, $alpha: .7);
+            }
+        }
+
+        .box-lang{
+           .select-options{
+               bottom: 100%;
+               top: auto;
+           }
         }
     }
 
