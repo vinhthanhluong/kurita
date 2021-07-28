@@ -1,0 +1,32 @@
+.box-field{
+    overflow: hidden;
+    .column{
+        width: calc(100% / 12 * 4);
+        @include max-media($bk-d-992){
+            width: calc(100% / 12 * 6);
+        }
+        @include max-media($bk-400){
+            width: 100%;
+        }
+    }
+
+    .field-title{
+        margin-bottom: 34px;
+        @include lh(56,40);
+        @include max-media($bk-d-1200){
+            margin-bottom: 25px;
+        }
+        @include max-media($bk-d-992){
+            margin-bottom: 15px;
+        }
+    }
+    .field-wrapper{
+        position: relative;
+    }
+
+    .box-arc{
+        top: 70px;
+        right: 0;
+        transform: translateX(50%);
+    }
+}

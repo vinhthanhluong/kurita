@@ -47,6 +47,13 @@
     .vimi-desc{
         @include lh(22,14);
     }
+}
 
-
+.global{
+    padding: 125px 0;
+    background-color: #2A73A8;
+    .global-title{
+        color: $w-cl;
+        margin-bottom: 30px;          
+    }
 }

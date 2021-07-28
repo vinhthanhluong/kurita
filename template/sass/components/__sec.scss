@@ -54,9 +54,11 @@
 }
 @include max-media($bk-d-1200) {
 	.sec-100,
-	.sec-80 {
+	.sec-80 ,
+	.sec-70{
 		padding: 60px 0;
 	}
+	.sec-70,
 	.sec-60,
 	.sec-50,
 	.sec-40 {

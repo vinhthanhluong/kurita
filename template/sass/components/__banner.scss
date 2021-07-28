@@ -34,11 +34,32 @@
         background-repeat: no-repeat;
         background-size: cover;
         padding: 125px 0 145px;
+        @include max-media($bk-d-1200){
+            padding: 100px 0;
+        }
+        @include max-media($bk-d-992){
+            padding: 80px 0;
+        }
+        @include max-media($bk-d-768){
+            padding: 60px 0;
+        }
         .banner-title{
             font-size: 120px;
             font-weight: 800;
             color: rgba($color: $main-cl, $alpha: .1);
             text-align: center;
+            @include max-media($bk-d-1200){
+                font-size: 100px;
+            }
+            @include max-media($bk-d-992){
+                font-size: 80px;
+            }
+            @include max-media($bk-d-768){
+                font-size: 60px;
+            }
+            @include max-media($bk-576){
+                font-size: 50px;
+            }
         }
     }
 
