@@ -29,35 +29,43 @@
 
     overflow: hidden;
 
-    &.banner-page{
+    &.banner-page {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         padding: 125px 0 145px;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             padding: 100px 0;
         }
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             padding: 80px 0;
         }
-        @include max-media($bk-d-768){
+
+        @include max-media($bk-d-768) {
             padding: 60px 0;
         }
-        .banner-title{
+
+        .banner-title {
             font-size: 120px;
             font-weight: 800;
             color: rgba($color: $main-cl, $alpha: .1);
             text-align: center;
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 font-size: 100px;
             }
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 font-size: 80px;
             }
-            @include max-media($bk-d-768){
+
+            @include max-media($bk-d-768) {
                 font-size: 60px;
             }
-            @include max-media($bk-576){
+
+            @include max-media($bk-576) {
                 font-size: 50px;
             }
         }
@@ -76,45 +84,101 @@
             background-size: cover;
             width: 100%;
             padding: 190px 0 200px;
-			position: relative;
-			z-index: 1;
+            position: relative;
+            z-index: 1;
+            @include max-media($bk-1400){
+                padding: 130px 0 150px;
+            }
+            @include max-media($bk-d-1200){
+                padding: 100px 0;
+            }
+            @include max-media($bk-d-992){
+                padding: 80px 0;
+            }
+            @include max-media($bk-d-768){
+                padding: 60px 0;
+            }
         }
 
-		.text-after , .text-before{
-			position: absolute;
-			z-index: -1;
-			
-		}
+        .text-after,
+        .text-before {
+            position: absolute;
+            z-index: -1;
 
-		.text-before{
-			font-size: 300px;
-			font-weight: 800;
-			top: -40px;
-			left: 175px;
-			color: rgba($color: $main-cl, $alpha: .1);
-		}
+        }
 
-		.text-after{
-			bottom: 145px;
-			right: 155px;
-			text-align: right;
-			line-height: 1;
-			color: rgba($color: $main-cl, $alpha: .3);
-		}
+        .text-before {
+            font-size: 300px;
+            font-weight: 800;
+            top: -40px;
+            left: 175px;
+            color: rgba($color: $main-cl, $alpha: .1);
 
-		
+            @include max-media($bk-1900) {
+                font-size: 250px;
+                left: 80px;
+                top: 0px;
+            }
+            @include max-media($bk-1400){
+                font-size: 200px;
+                left: 10px;
+            }
+            @include max-media($bk-d-1200){
+                font-size: 150px;
+                left: 10px;
+            }
+            @include max-media($bk-d-992){
+                font-size: 120px;
+                left: 10px;
+                top: 10px;
+            }
+            @include max-media($bk-d-768){
+                display: none;
+            }
+        }
+
+        .text-after {
+            bottom: 145px;
+            right: 155px;
+            text-align: right;
+            line-height: 1;
+            color: rgba($color: $main-cl, $alpha: .3);
+            @include max-media($bk-1900){
+                right: 80px;
+            }
+            @include max-media($bk-1400){
+                right: 15px;
+            }
+            @include max-media($bk-d-1200){
+                bottom: 100px;
+            }
+            @include max-media($bk-d-992){
+                bottom: 80px;
+            }
+            @include max-media($bk-d-768){
+                display: none;
+            }
+        }
+
+
 
 
         .banner-title {
             margin-bottom: 35px;
             color: $b-2222-cl;
             @include lh(64, 46);
+            @include max-media($bk-d-1200){
+                margin-bottom: 20px;
+            }
         }
 
         .banner-desc {
             max-width: 600px;
             @include lh(38, 24);
             margin-bottom: 41px;
+            @include max-media($bk-d-1200){
+                margin-bottom: 30px;
+            }
         }
 
         .banner-link {
@@ -131,14 +195,17 @@
                 transform: translate(-100%, -50%);
                 z-index: 1;
                 transition: all .3s ease;
-			
+                @include max-media($bk-1900){
+                    display: none;
+                }
             }
 
             &:hover {
-				&::before{
-					width: 0;
-					
-				}
+                &::before {
+                    width: 0;
+
+                }
+
                 .btn-more {
                     box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .16);
 
@@ -162,6 +229,10 @@
                 @include fz-20;
                 padding: 15px 20px;
                 transition: all .3s ease;
+                @include max-media($bk-d-768){
+                    height: 50px;
+                    padding: 12px 10px;
+                }
 
 
 

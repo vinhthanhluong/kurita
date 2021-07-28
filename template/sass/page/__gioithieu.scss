@@ -1,4 +1,5 @@
 .vision-mission{
+    overflow: hidden;
     .container-full{
         padding: 0;
     }
@@ -11,6 +12,9 @@
         text-align: center;
         color: $w-cl;
         position: relative;
+        @include max-media($bk-d-768){
+            width: 100%;
+        }
         &::after{
             content: '';
             background-color: rgba($color: $b-2222-cl, $alpha: .6);
@@ -26,9 +30,21 @@
     .vimi-inner{
         z-index: 2;
         position: relative;
-        width: 555px;
+        max-width: 585px;
         margin: 0 auto;
-        padding: 86px 0;
+        padding: 86px 15px;
+
+        @include max-media($bk-d-1200){
+            padding: 60px 15px;
+        }
+
+        @include max-media($bk-d-992){
+            padding: 40px 10px;
+        }
+
+        @include max-media($bk-d-768){
+            padding: 40px 15px;
+        }
 
     }
 
@@ -37,6 +53,12 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 25px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 20px;
+        }
+        @include max-media($bk-d-992){
+            margin-bottom: 15px;
+        }
     }
 
     .vimi-title{
@@ -52,6 +74,18 @@
 .global{
     padding: 125px 0;
     background-color: #2A73A8;
+    @include max-media($bk-1400){
+        padding: 100px 0;
+    }
+    @include max-media($bk-d-1200){
+        padding: 80px 0;
+    }
+    @include max-media($bk-d-992){
+        padding: 60px 0;
+    }
+    @include max-media($bk-d-768){
+        padding: 40px 0;
+    }
     .global-title{
         color: $w-cl;
         margin-bottom: 30px;          

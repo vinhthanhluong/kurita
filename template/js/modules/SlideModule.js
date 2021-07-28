@@ -47,15 +47,28 @@ export default function SlideModule(){
                     loop: true,
                     spaceBetween: 30,
                     slidesPerView: 3,
-                    // autoplay: {
-                    //     delay: 4000,
-                    // },
                     
                     pagination: {
                         el: '.swiper-pagination',
                         clickable: true,
                     },
-                  
+
+                    breakpoints: {
+                        320: {
+                            spaceBetween: 10,
+                            slidesPerView: 1,
+                        },
+                       
+                        768: {
+                            spaceBetween: 20,
+                            slidesPerView: 2,
+                        },
+
+                        992: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        },
+                    }
                 })
             }
             catch (err) {
@@ -91,18 +104,20 @@ export default function SlideModule(){
                     //     prevEl: '.swiper-button-prev',
                     // },
 
-                    breakpoints: {
-                        // 320: {
-                        //     spaceBetween: 50
-                        // },
-                        // 480: {
-                        //     spaceBetween: 30
-                        // },
-                        // 576: {
-                        //     spaceBetween: 0,
+                    // breakpoints: {
+                    //     320: {
+                    //         spaceBetween: 10,
+                    //     },
+                       
+                    //     576: {
+                    //         spaceBetween: 0,
+                    //     },
 
-                        // }
-                    }
+                    //     1200: {
+                           
+                    //         spaceBetween: 30,
+                    //     },
+                    // }
                     // observeParents:true,
                     // observeSlideChildren: true,
                     // observer: true,
@@ -112,4 +127,35 @@ export default function SlideModule(){
             console.log(err)
         }
     }
+
+    function slideAuto() {
+      
+        if (document.querySelector('.slide-auto')) {
+            const swiper = document.querySelector('.slide-auto');
+            const sliderContainer = swiper.querySelector('.swiper-container');
+            const SliderPagination = swiper.querySelector('.swiper-pagination-orange');
+            const sliderPrevBtn = swiper.querySelector('.swiper-prev');
+            const sliderNextBtn = swiper.querySelector('.swiper-next');
+            try {
+                const swiper = new Swiper(sliderContainer, {
+                    speed: 1000,
+                    loop: true,
+                    slidesPerView: 'auto',
+                    spaceBetween: 30,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                  
+                  
+                })
+            }
+            catch (err) {
+                console.log(err)
+            }
+
+        }
+    }
+
+    $('.slide-auto').length && slideAuto();
 }
