@@ -2,10 +2,10 @@
     overflow: hidden;
 
     .container-full {
-        
-        @include min-media($bk-768){
-            padding: 0;
-        }
+        padding: 0;
+        // @include min-media($bk-768){
+        //     padding: 0;
+        // }
     }
 
     .contact-wrap {
@@ -31,6 +31,9 @@
 
     .contact-head {
         margin-bottom: 30px;
+        @include max-media($bk-d-768){
+            padding: 0 15px;
+        }
     }
 
     .contact-box {
@@ -80,6 +83,7 @@
               
                 @include max-media($bk-d-768){
                     margin: 0 auto;
+                    padding: 0 15px;
                 }
             }
 
@@ -91,6 +95,7 @@
                 }
                 @include max-media($bk-d-768){
                     margin: 0 auto;
+                    padding: 0 15px;
                 }
             }
 

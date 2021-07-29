@@ -80,6 +80,41 @@ export default function SlideModule(){
 
     $('.slide-three').length && slideThree();
 
+
+
+    function slideAuto() {
+      
+        if (document.querySelector('.slide-auto')) {
+            const swiper = document.querySelector('.slide-auto');
+            const sliderContainer = swiper.querySelector('.swiper-container');
+            const SliderPagination = swiper.querySelector('.swiper-pagination-orange');
+            const sliderPrevBtn = swiper.querySelector('.swiper-prev');
+            const sliderNextBtn = swiper.querySelector('.swiper-next');
+            try {
+                const swiper = new Swiper(sliderContainer, {
+                    speed: 1000,
+                    loop: true,
+                    slidesPerView: 'auto',
+                    spaceBetween: 30,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                  
+                  
+                })
+            }
+            catch (err) {
+                console.log(err)
+            }
+
+        }
+    }
+
+    $('.slide-auto').length && slideAuto();
+
+
+
     if (document.querySelector('#slideasd')) {
         const swiper = document.querySelector('#slideasd');
         const sliderContainer = swiper.querySelector('.swiper-container');
@@ -127,35 +162,4 @@ export default function SlideModule(){
             console.log(err)
         }
     }
-
-    function slideAuto() {
-      
-        if (document.querySelector('.slide-auto')) {
-            const swiper = document.querySelector('.slide-auto');
-            const sliderContainer = swiper.querySelector('.swiper-container');
-            const SliderPagination = swiper.querySelector('.swiper-pagination-orange');
-            const sliderPrevBtn = swiper.querySelector('.swiper-prev');
-            const sliderNextBtn = swiper.querySelector('.swiper-next');
-            try {
-                const swiper = new Swiper(sliderContainer, {
-                    speed: 1000,
-                    loop: true,
-                    slidesPerView: 'auto',
-                    spaceBetween: 30,
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                  
-                  
-                })
-            }
-            catch (err) {
-                console.log(err)
-            }
-
-        }
-    }
-
-    $('.slide-auto').length && slideAuto();
 }
