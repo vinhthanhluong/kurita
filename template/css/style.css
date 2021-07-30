@@ -5,6 +5,7 @@
 @import url(../js/libs/popup/magnific-popup.css);
 @import url(../js/libs/lightgallery/lightgallery.css);
 @import url(../font/font-awesome-4.7.0/css/font-awesome.min.css);
+@import url(../js/libs/wow/wow.css);
 /*width*/
 .mona-content strong,
 .mona-content b {
@@ -844,6 +845,18 @@ sup {
 }
 .box-inner .box-content .box-tt:hover {
   color: #0892B9;
+}
+
+.wow {
+  animation-duration: 1s;
+}
+@media screen and (max-width: 767px) {
+  .wow {
+    visibility: visible !important;
+    -webkit-animation-name: none !important;
+    -o-animation-name: none !important;
+    animation-name: none !important;
+  }
 }
 
 .header {
@@ -2767,6 +2780,17 @@ sup {
     font-size: 50px;
   }
 }
+@media screen and (min-width: 768px) {
+  .banner.banner-slide .swiper-slide-active .banner-title {
+    animation: bounceInRight 1s;
+    animation-delay: 300ms;
+  }
+}
+@media screen and (min-width: 768px) {
+  .banner.banner-slide .swiper-slide-active .btn-mores {
+    animation: fadeInUpBig 1s;
+  }
+}
 .banner.banner-slide .container-full {
   padding: 0;
 }
@@ -4213,6 +4237,7 @@ html .mfp-wrap {
 .contact .contact-title {
   margin-bottom: 20px;
   color: #222222;
+  line-height: 1.3913043478;
 }
 @media screen and (max-width: 1199px) {
   .contact .contact-title {
@@ -4225,6 +4250,7 @@ html .mfp-wrap {
 @media screen and (max-width: 767px) {
   .contact .contact-head {
     padding: 0 15px;
+    margin-bottom: 20px;
   }
 }
 .contact .contact-box {
@@ -4232,10 +4258,20 @@ html .mfp-wrap {
   flex-wrap: wrap;
   margin: 0 -15px;
 }
+@media screen and (max-width: 991px) {
+  .contact .contact-box {
+    margin: 0 -7.5px;
+  }
+}
 .contact .contact-item {
   width: 50%;
   padding: 0 15px;
   position: relative;
+}
+@media screen and (max-width: 991px) {
+  .contact .contact-item {
+    padding: 0 7.5px;
+  }
 }
 @media screen and (max-width: 767px) {
   .contact .contact-item {
@@ -4380,6 +4416,9 @@ html .mfp-wrap {
   opacity: 1;
   visibility: visible;
 }
+.field-detail .swiper-slide:hover .field-slide a {
+  color: #0892B9;
+}
 .field-detail .swiper-slide-active .field-slide a {
   font-weight: bold;
   color: #0892B9;
@@ -4459,6 +4498,11 @@ html .mfp-wrap {
 @media screen and (max-width: 1199px) {
   .field-detail .field-content .field-tt {
     margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .field-detail .field-content .field-tt {
+    margin-bottom: 10px;
   }
 }
 .field-detail .field-content .field-desc {
@@ -4575,6 +4619,7 @@ html .mfp-wrap {
 
 .box-service {
   padding-top: 55px;
+  overflow: hidden;
 }
 @media screen and (max-width: 991px) {
   .box-service {
@@ -4588,7 +4633,8 @@ html .mfp-wrap {
   padding: 10px 0;
   border-bottom: 1px solid #D8E3E7;
 }
-.box-service .service-thumb-small .swiper-container:hover .swiper-button-next, .box-service .service-thumb-small .swiper-container:hover .swiper-button-prev {
+.box-service .service-thumb-small .swiper-container:hover .swiper-button-next,
+.box-service .service-thumb-small .swiper-container:hover .swiper-button-prev {
   opacity: 1;
   visibility: visible;
 }
@@ -4600,7 +4646,8 @@ html .mfp-wrap {
   color: #0892B9;
   font-weight: bold;
 }
-.box-service .service-thumb-small .swiper-button-next, .box-service .service-thumb-small .swiper-button-prev {
+.box-service .service-thumb-small .swiper-button-next,
+.box-service .service-thumb-small .swiper-button-prev {
   background-color: rgba(128, 128, 128, 0.5);
   top: 0;
   bottom: 0;
@@ -4610,13 +4657,15 @@ html .mfp-wrap {
   opacity: 0;
   visibility: hidden;
 }
-.box-service .service-thumb-small .swiper-button-next::after, .box-service .service-thumb-small .swiper-button-prev::after {
+.box-service .service-thumb-small .swiper-button-next::after,
+.box-service .service-thumb-small .swiper-button-prev::after {
   font-size: 20px;
   color: #fff;
   transition: all 0.3s ease;
   font-weight: bold;
 }
-.box-service .service-thumb-small .swiper-button-next:hover, .box-service .service-thumb-small .swiper-button-prev:hover {
+.box-service .service-thumb-small .swiper-button-next:hover,
+.box-service .service-thumb-small .swiper-button-prev:hover {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .box-service .service-thumb-small .swiper-button-next {
@@ -4893,7 +4942,7 @@ html .mfp-wrap {
   }
 }
 .box-service .service-thumb-big .service-report .service-desc {
-  color: #222222;
+  color: rgba(0, 0, 0, 0.7);
 }
 .box-service .service-thumb-big .service-report .service-desc P {
   margin-top: 25px;
@@ -5100,6 +5149,10 @@ html .mfp-wrap {
 .box-service .service-thumb-big .service-check .check-desc {
   line-height: 1.5714285714;
   color: #222222;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .box-service .service-thumb-big .service-check .check-link {
   text-align: center;
@@ -5118,6 +5171,44 @@ html .mfp-wrap {
 }
 .box-service .service-thumb-big .service-check .check-link .btn-more:hover {
   color: #0892B9;
+}
+@media screen and (min-width: 768px) {
+  .box-service .service-thumb-big .swiper-slide-active .service-saving .sav-tt {
+    animation: zoomIn 1s;
+  }
+}
+@media screen and (min-width: 768px) {
+  .box-service .service-thumb-big .swiper-slide-active .service-saving .sav-img {
+    animation: fadeInUp 1s;
+    animation-delay: 200ms;
+  }
+}
+@media screen and (min-width: 768px) {
+  .box-service .service-thumb-big .swiper-slide-active .service-analy .service-title {
+    animation: zoomIn 1s;
+  }
+}
+@media screen and (min-width: 768px) {
+  .box-service .service-thumb-big .swiper-slide-active .service-report .service-title {
+    animation: zoomIn 1s;
+  }
+}
+@media screen and (min-width: 768px) {
+  .box-service .service-thumb-big .swiper-slide-active .service-report .service-img {
+    animation: fadeInUp 1s;
+    animation-delay: 200ms;
+  }
+}
+@media screen and (min-width: 768px) {
+  .box-service .service-thumb-big .swiper-slide-active .service-check .check-title {
+    animation: zoomIn 1s;
+  }
+}
+@media screen and (min-width: 768px) {
+  .box-service .service-thumb-big .swiper-slide-active .service-check .columns {
+    animation: fadeInUp 1s;
+    animation-delay: 200ms;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

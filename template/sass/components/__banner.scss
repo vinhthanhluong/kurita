@@ -29,6 +29,8 @@
 
     overflow: hidden;
 
+
+
     &.banner-page {
         background-position: center;
         background-repeat: no-repeat;
@@ -74,6 +76,24 @@
 
     &.banner-slide {
 
+        .swiper-slide-active {
+            .banner-title {
+                @include min-media($bk-768) {
+                    animation: bounceInRight 1s;
+                    animation-delay: 300ms;
+                }
+            }
+            
+            .btn-mores{
+                @include min-media($bk-768){
+                    animation:  fadeInUpBig 1s;
+                    // animation-delay: 300ms;
+                }
+            }
+
+
+        }
+
         .container-full {
             padding: 0;
         }
@@ -86,16 +106,20 @@
             padding: 190px 0 200px;
             position: relative;
             z-index: 1;
-            @include max-media($bk-1400){
+
+            @include max-media($bk-1400) {
                 padding: 130px 0 150px;
             }
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 padding: 100px 0;
             }
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 padding: 80px 0;
             }
-            @include max-media($bk-d-768){
+
+            @include max-media($bk-d-768) {
                 padding: 60px 0;
             }
         }
@@ -119,20 +143,24 @@
                 left: 80px;
                 top: 0px;
             }
-            @include max-media($bk-1400){
+
+            @include max-media($bk-1400) {
                 font-size: 200px;
                 left: 10px;
             }
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 font-size: 150px;
                 left: 10px;
             }
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 font-size: 120px;
                 left: 10px;
                 top: 10px;
             }
-            @include max-media($bk-d-768){
+
+            @include max-media($bk-d-768) {
                 display: none;
             }
         }
@@ -143,19 +171,24 @@
             text-align: right;
             line-height: 1;
             color: rgba($color: $main-cl, $alpha: .3);
-            @include max-media($bk-1900){
+
+            @include max-media($bk-1900) {
                 right: 80px;
             }
-            @include max-media($bk-1400){
+
+            @include max-media($bk-1400) {
                 right: 15px;
             }
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 bottom: 100px;
             }
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 bottom: 80px;
             }
-            @include max-media($bk-d-768){
+
+            @include max-media($bk-d-768) {
                 display: none;
             }
         }
@@ -167,7 +200,8 @@
             margin-bottom: 35px;
             color: $b-2222-cl;
             @include lh(64, 46);
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 margin-bottom: 20px;
             }
         }
@@ -176,7 +210,8 @@
             max-width: 600px;
             @include lh(38, 24);
             margin-bottom: 41px;
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 margin-bottom: 30px;
             }
         }
@@ -195,7 +230,8 @@
                 transform: translate(-100%, -50%);
                 z-index: 1;
                 transition: all .3s ease;
-                @include max-media($bk-1900){
+
+                @include max-media($bk-1900) {
                     display: none;
                 }
             }
@@ -229,7 +265,8 @@
                 @include fz-20;
                 padding: 15px 20px;
                 transition: all .3s ease;
-                @include max-media($bk-d-768){
+
+                @include max-media($bk-d-768) {
                     height: 50px;
                     padding: 12px 10px;
                 }

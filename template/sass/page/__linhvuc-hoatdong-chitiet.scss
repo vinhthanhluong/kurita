@@ -46,11 +46,21 @@
         }
     }
 
-    .swiper-slide-active {
-        .field-slide {
-            a {
-                font-weight: bold;
-                color: $main-cl;
+    .swiper-slide{
+        &:hover{
+            .field-slide {
+                a {
+                    color: $main-cl;
+                }
+            }
+        }
+
+        &-active{
+            .field-slide {
+                a {
+                    font-weight: bold;
+                    color: $main-cl;
+                }
             }
         }
     }
@@ -139,6 +149,9 @@
 
             @include max-media($bk-d-1200) {
                 margin-bottom: 15px;
+            }
+            @include max-media($bk-d-768){
+                margin-bottom: 10px;
             }
         }
 

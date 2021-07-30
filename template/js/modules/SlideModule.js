@@ -95,11 +95,22 @@ export default function SlideModule(){
                     speed: 1000,
                     loop: true,
                     slidesPerView: 'auto',
-                    spaceBetween: 30,
+                    spaceBetween: 35,
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
                     },
+                     breakpoints: {
+                        320: {
+                            spaceBetween: 20,
+                        },
+                       
+                        768: {
+                            spaceBetween: 35,
+                        },
+
+                       
+                    }
                   
                   
                 })

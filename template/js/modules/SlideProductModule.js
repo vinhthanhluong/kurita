@@ -23,11 +23,11 @@ export default function SlideProductModule() {
                     },
                     breakpoints: {
                         320: {
-                            spaceBetween: 10,
+                            spaceBetween: 20,
 
                         },
 
-                        768: {
+                        1200: {
                             spaceBetween: 45,
                         },
                     }
