@@ -81,8 +81,9 @@
         }
     }
 
-    .btn-link{
+    .btn-link {
         margin-top: 40px;
+
         @include max-media($bk-d-1200) {
             margin-top: 30px;
         }
@@ -466,22 +467,142 @@
 
     }
 
-    .column {
+    .library-inner{
         width: calc(100% / 12 * 3);
-
+        padding: 15px;
+        float: left;
+        display: inline-block;
+        @include max-media($bk-d-992){
+            padding: 7.5px;
+        }
         @include max-media($bk-900) {
             width: calc(100% / 12 * 6);
         }
+        @include max-media($bk-d-768){
+            width: 100%;
+        }
+    }
 
-        &:nth-child(1) , &:nth-child(2){
+
+    .lib-wrap{
+        // margin: -15px;
+        // &::after , &::before{
+        //     content: '';
+        //     display: table;
+        //     clear: both;
+        // }
+
+        display: flex;
+        flex-wrap: wrap;
+        margin: -15px;
+
+        @include max-media($bk-d-992){
+            margin: -7.5px;
+        }
+       
+    }
+
+    .library-galle {
+        width: 100%;
+        // height: 100%;
+        position: relative;
+        padding: 15px;
+        width: calc(100% / 12 * 3);
+        
+        @include max-media($bk-d-992){
+            padding: 7.5px;
+        }
+
+        @include max-media($bk-900){
+            width: calc(100% / 12 * 6);
+        }
+
+        &:nth-of-type(1){
             @include max-media($bk-d-768){
                 width: 100% !important;
             }
         }
-       
 
         &.wth-bi {
             width: calc(100% / 12 * 6);
+        }
+
+        &:hover {
+
+            &::before {
+                opacity: 0.5;
+                visibility: visible;
+            }
+
+
+            img {
+                filter: saturate(100%);
+            }
+
+            .icon-play {
+                @include visible;
+            }
+        }
+
+
+       
+
+        &::before {
+            content: '';
+            background-image: radial-gradient(circle, transparent, $main-cl);
+            position: absolute;
+            top: 0;
+            left: 02;
+            right: 0;
+            bottom: 0;
+            transition: all .3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1;
+
+        }
+
+
+
+        .icon-play {
+            @include pos-mid;
+            font-size: 16px;
+            color: $main-cl;
+            transition: all .3s ease;
+            @include hidden;
+
+            @include max-media($bk-576) {
+                height: 20px;
+            }
+
+            &::before {
+                content: '';
+                width: 44px;
+                height: 44px;
+                border-radius: 100%;
+                background-color: $w-cl;
+                @include pos-mid;
+                z-index: -1;
+            }
+
+            &::after {
+                content: '';
+                width: 84px;
+                height: 84px;
+                background-color: rgba($color: #D8E3E7, $alpha: .2);
+                border-radius: 100%;
+                @include pos-mid;
+                z-index: -2;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            filter: saturate(0%);
+            transition: all .3s ease;
         }
     }
 
@@ -519,93 +640,12 @@
         @include line-clamp(4);
     }
 
-    .library-img {
-        width: 100%;
-        height: 100%;
 
-        &:hover {
-            a {
-                &::before {
-                    opacity: 0.5;
-                    visibility: visible;
-                }
-            }
-
-            img {
-                filter: saturate(100%);
-            }
-
-            .icon-play {
-                @include visible;
-            }
-        }
-
-        a {
-            display: block;
-            position: relative;
-            height: 100%;
-
-            &::before {
-                content: '';
-                width: 100%;
-                height: 100%;
-                background-image: radial-gradient(circle, transparent, $main-cl);
-                position: absolute;
-                top: 0;
-                left: 0;
-                transition: all .3s ease;
-                opacity: 0;
-                visibility: hidden;
-                z-index: 1;
-
-            }
-
-        }
-
-        .icon-play {
-            @include pos-mid;
-            font-size: 16px;
-            color: $main-cl;
-            transition: all .3s ease;
-            @include hidden;
-            @include max-media($bk-576){
-                height: 20px;
-            }
-
-            &::before {
-                content: '';
-                width: 44px;
-                height: 44px;
-                border-radius: 100%;
-                background-color: $w-cl;
-                @include pos-mid;
-                z-index: -1;
-            }
-
-            &::after {
-                content: '';
-                width: 84px;
-                height: 84px;
-                background-color: rgba($color: #D8E3E7, $alpha: .2);
-                border-radius: 100%;
-                @include pos-mid;
-                z-index: -2;
-            }
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
-            max-width: 100%;
-            object-fit: cover;
-            filter: saturate(0%);
-            transition: all .3s ease;
-        }
-    }
 
     .btn-link {
         margin-top: 35px;
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             margin-top: 30px;
         }
     }

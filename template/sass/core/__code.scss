@@ -21,9 +21,11 @@
     top: 70px;
     right: 0;
     transform: translateX(50%);
-    @include max-media($bk-d-1200){
+
+    @include max-media($bk-d-1200) {
         display: none;
     }
+
     &::before {
         content: '';
         width: 94px;
@@ -81,28 +83,30 @@
     &.box-play {
         &:hover {
             .box-img {
-                a{
-                    &::before{
+                a {
+                    &::before {
                         @include visible;
                     }
                 }
+
                 img {
                     transform: none;
                 }
+            }
 
-                .icon-play{
-                    @include visible;
-                }
+            .icon-play {
+                @include visible;
             }
         }
 
         .box-img {
             position: relative;
 
-            a{
+            a {
                 display: block;
                 position: relative;
-                &::before{
+
+                &::before {
                     content: '';
                     width: 100%;
                     height: 100%;
@@ -111,7 +115,7 @@
                     top: 0;
                     left: 0;
                     transition: all .3s ease;
-                    @include  hidden;
+                    @include hidden;
                 }
             }
         }
@@ -123,6 +127,7 @@
             color: $main-cl;
             @include hidden;
             transition: all .3s ease;
+
             &::before {
                 content: '';
                 width: 34px;
@@ -144,13 +149,15 @@
             }
         }
     }
-    &:hover{
-        .box-img{
-            img{
+
+    &:hover {
+        .box-img {
+            img {
                 transform: scale(1.1);
             }
         }
     }
+
     .box-img {
         overflow: hidden;
 
@@ -162,23 +169,28 @@
             transition: all .3s ease;
         }
     }
-    .box-content{
+
+    .box-content {
         margin-top: 21px;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             margin-top: 15px;
         }
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             margin-top: 10px;
         }
-        .box-tt{
+
+        .box-tt {
             transition: all .3s ease;
             color: $b-2222-cl;
-            &:hover{
+
+            &:hover {
                 color: $main-cl;
             }
         }
 
-        
+
     }
 }
 
@@ -191,4 +203,18 @@
         -o-animation-name: none !important;
         animation-name: none !important;
     }
+}
+
+// .lg-outer .lg-video-cont {
+//     max-width: 1200px !important;
+// }
+
+.inline-gallery {
+    width: 100%;
+    height: 560px;
+    position: relative;
+}
+
+.white-popup{
+    background-color: $w-cl;
 }

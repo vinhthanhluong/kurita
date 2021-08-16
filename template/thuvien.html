@@ -193,7 +193,7 @@
                             <div class="column" data-aos="fade-up">
                                 <div class="box-inner box-play ">
                                     <div class="box-img">
-                                        <a href="https://www.youtube.com/watch?v=p40OWOxAeSw" class="popup-video">
+                                        <a href="#popup-form" class="popup-tt-gallery">
                                             <img src="./img/img-boxlibrary-1.png" alt="img-boxlibrary-1.png">
                                             <div class="icon-play">
                                                 <i class="fa fa-play" aria-hidden="true"></i>
@@ -202,19 +202,21 @@
                                     </div>
                                     <div class="box-content">
                                         <h4 class="box-tt tt-18 f-bold">
-                                            <a href="https://www.youtube.com/watch?v=p40OWOxAeSw" class="popup-video">
+                                            <a href="#popup-form" class="popup-tt-gallery">
                                                 Tư vấn tiết kiệm năng lượng
                                             </a>
                                         </h4>
                                     </div>
-
-
+                                    <!-- popup form -->
+                                    <div id="popup-form" class="white-popup mfp-hide">
+                                        <div id="inline-gallery" class="inline-gallery"></div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="column" data-aos="fade-up">
                                 <div class="box-inner box-play">
                                     <div class="box-img">
-                                        <a href="https://www.youtube.com/watch?v=p40OWOxAeSw" class="popup-video">
+                                        <a href="#popup-form-1" class="popup-tt-gallery">
                                             <img src="./img/img-boxlibrary-2.png" alt="img-boxlibrary-2.png">
                                         </a>
                                         <div class="icon-play">
@@ -223,10 +225,14 @@
                                     </div>
                                     <div class="box-content">
                                         <h4 class="box-tt tt-18 f-bold">
-                                            <a href="https://www.youtube.com/watch?v=p40OWOxAeSw" class="popup-video">
+                                            <a href="#popup-form-1" class="popup-tt-gallery">
                                                 Tư vấn tiết kiệm năng lượng
                                             </a>
                                         </h4>
+                                    </div>
+                                    <!-- popup form -->
+                                    <div id="popup-form-1" class="white-popup mfp-hide">
+                                        <div id="inline-gallery-2" class="inline-gallery"></div>
                                     </div>
                                 </div>
                             </div>
@@ -421,6 +427,11 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="test">
+                            <!-- <div id="inline-gallery-container" class="inline-gallery-container"></div> -->
+                        </div>
+
                         <div class="library-link">
                             <a href="#" class="btn w-160 btn-normal">Nhiều hơn</a>
                         </div>
@@ -428,8 +439,6 @@
                     </div>
                 </div>
             </div>
-
-
 
 
         </main>
@@ -790,13 +799,65 @@
     <!-- Swiper -->
     <script src="./js/libs/swiper/swiper.min.js"></script>
     <!-- lighrgallery -->
-    <script src="./js/libs/lightgallery/lightgallery-all.min.js"></script>
+    <script src="./js/libs/lightgallery/js/lightgallery.umd.js"></script>
+    <script src="./js/libs/lightgallery/js/lg-thumbnail.umd.js"></script>
+    <script src="./js/libs/lightgallery/js/lg-zoom.umd.js"></script>
+    <script src="./js/libs/lightgallery/js/lg-video.umd.js"></script>
+    <script src="./js/libs/lightgallery/js/lg-autoplay.umd.js"></script>
+    <script src="./js/libs/lightgallery/js/lg-fullscreen.umd.js"></script>
+    <script src="./js/libs//lightgallery/js/lg-share.umd.js"></script>
+    <script src="./js/libs/lightgallery/js/lg-medium-zoom.umd.js"></script>
     <!-- popup -->
     <script src="./js/libs/popup/jquery.magnific-popup.js"></script>
     <!-- wow -->
     <script src="./js/libs/wow/wow.min.js"></script>
     <!-- Style -->
     <script src="./js/style.js" type="module" defer></script>
+
+    <script>
+        if ($('#inline-gallery-2').length) {
+
+            const lgContainer = document.getElementById('inline-gallery-2');
+            const inlineGallery = lightGallery(lgContainer, {
+                container: lgContainer,
+                dynamic: true,
+                hash: false,
+                closable: false,
+                showMaximizeIcon: true,
+                appendSubHtmlTo: '.lg-item',
+                slideDelay: 400,
+                download: false,
+                plugins: [lgVideo, lgAutoplay, lgShare],
+                dynamicEl: [
+                    {
+                        src: 'img/img-boxlibrary-3.png',
+                        subHtml: `<div class="lightGallery-captions">
+        <h4>Caption 1</h4>
+        <p>Description of the slide 1</p>
+    </div>`,
+                    },
+                    {
+                        src: 'img/img-boxlibrary-2.png',
+                        subHtml: `<div class="lightGallery-captions">
+        <h4>Caption 2</h4>
+        <p>Description of the slide 2</p>
+    </div>`,
+                    },
+                    {
+                        src: 'https://youtu.be/p40OWOxAeSw',
+                        subHtml: `<div class="lightGallery-captions">
+        <h4>Caption 3</h4>
+        <p>Description of the slide 3</p>
+    </div>`,
+                    },
+
+                ],
+            });
+
+            // Since we are using dynamic mode, we need to programmatically open lightGallery
+            inlineGallery.openGallery();
+        }
+    </script>
 </body>
 
 </html>
